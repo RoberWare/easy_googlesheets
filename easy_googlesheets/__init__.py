@@ -10,7 +10,7 @@ Created on Thu Oct  8 20:48:51 2020
 #import httplib2
 import os
 import re
-import googleapiclient.discovery as discovery
+from googleapiclient.discovery import build
 from google.oauth2 import service_account
 from googleapiclient.errors import HttpError
 import json
@@ -39,7 +39,7 @@ class GSheets():
                 self.tab_id = tab['replies'][0]['addSheet']['properties']['sheetId']
             
     def connect(self, credentials):
-        self.service=discovery.build('sheets', 'v4', credentials=credentials)
+        self.service=build('sheets', 'v4', credentials=credentials)
         request = self.service.spreadsheets().values().get(spreadsheetId=self.spreadsheet_id, range="1:1").execute()
         coordinate_col='A'
         for value in request["values"][0]:
