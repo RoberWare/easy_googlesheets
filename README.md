@@ -8,6 +8,8 @@ Google sheets API, easy to use
 
 ## Example of usage
 ```Python
+from easy_googlesheets import GSheets
+
 myGSheets = GSheets(secret_filename='credentials.json', 
                     spreadsheet_id='',
                     data_tab_name='Page 1',
@@ -31,4 +33,4 @@ myGSheets.insert({'name': '100 Montaditos ',
 # Always close at the end
 myGSheets.close()
 ```
-<img src="https://github.com/RoberWare/easy_googlesheets/blob/main/static/screenshot.png" alt="example01"/>
+<img src="https://github.com/RoberWare/easy_googlesheets/blob/main/static/screenshot.png" alt="example01"/> 
